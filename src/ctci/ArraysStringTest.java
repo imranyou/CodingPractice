@@ -23,7 +23,8 @@ public class ArraysStringTest {
     @Test
     public void permutationTest(){
         Permutation p = new Permutation();
-        Assert.assertEquals(true,p.bfPermutation("abcabbac","abc"));
+        String expected = "[ACB, BCA, ABC, CBA, BAC, CAB]";
+        Assert.assertEquals(expected, p.createCombinations("ABC").toString());
 
     }
 }
