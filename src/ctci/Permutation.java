@@ -48,10 +48,6 @@ public class Permutation {
                     hs.add(t);
                     }
                 }
-
-
-
-
         return hs;
     }
 
