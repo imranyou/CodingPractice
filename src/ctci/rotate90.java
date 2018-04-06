@@ -18,11 +18,14 @@ public class rotate90 {
     public int[][] rotate90clockWise(int[][] matrix){
         int[][] temp = matrix.clone();
 
+        //getting n
         int matSize = matrix.length;
 
+        //get top original row
         int[] top = matrix[0];
-        int[] bottom = matrix[matSize-1];
 
+        //get original bottom row
+        int[] bottom = matrix[matSize-1];
 
 
         int[] right = new int[matSize];
@@ -36,18 +39,18 @@ public class rotate90 {
             }
         }
 
-        //right = top
+        // move top to right
         temp[0] = right;
 
-        //bottom = left
+        //move bottom to left
         temp[matSize-1]=left;
 
         //top=left
 
         for(int n=0; n < top.length; n++){
-            //top --> left
+            //move right to top
             temp[n][matSize-1] = top[n];
-            //bottom --> right
+            //move bottom to right
             temp[n][0] = bottom[n];
 
         }
@@ -75,7 +78,11 @@ public class rotate90 {
 
     public static void main(String[] args){
         rotate90 r = new rotate90();
-        int[][] matrix = {{1,2,3},{4,5,6},{7,8,9}};
+        int[][] matrix = {{-1,-2,-3,-4},{-5,-6,-7,-8},{-9,10,11,12},{13,14,15,16}};
+        System.out.println(r.printIt(matrix));
+
+        System.out.println("#####################");
+
         System.out.println(r.printIt(r.rotate90clockWise(matrix)));
 
 
